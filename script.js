@@ -23,3 +23,14 @@ function calcular() {
     document.getElementById('resultado').innerHTML = 'sem numero';
   }
 }
+
+function typeWrite(elemento) {
+  const textoArray = elemento.innerHTML.split('');
+  elemento.innerHTML = '';
+  textoArray.forEach((letras, i) => {
+    setTimeout(() => (elemento.innerHTML += letras), 75 * i);
+  });
+}
+
+const titulo = document.querySelector('.escts');
+typeWrite(titulo);
